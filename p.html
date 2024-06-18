@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font: 400 15px/1.8 "Lato", sans-serif;
+            color: #777;
+        }
+        .bg {
+            position: fixed;
+            top: -50%;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        .nav {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 25%;
+            left: 0;
+            background-color: #333;
+        }
+        .nav a {
+            padding: 14px 16px;
+            text-decoration: none;
+            color: #f2f2f2;
+        }
+
+        @media screen and (max-width: 76.8rem) {
+            .bg {
+                top: 0;
+                left: 0;
+            }
+            .nav{
+                top: 0;
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<video autoplay loop muted class="bg">
+    <source src="VIDEO/Designer.mp4" type="video/mp4">
+</video>
+<div class="nav">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+</div>
+</body>
+</html>
+
+
+

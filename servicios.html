@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        html{
+            font-size: 62.5%; /* 1rem=10px */
+            box-sizing: border-box;
+        }
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+        body{
+            /*box-sizing: border-box;*/
+            margin: 0;
+            padding: 0;
+        }
+        .hero3 {
+            width: 100%;
+            height: 100vh;
+            color: var(--blanco);
+            display: flex;
+            justify-content: center;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url("/IMG/bg3-2.jpg");
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .contenedor {
+            background: linear-gradient(to right,
+            rgba(147, 147, 150, 0),
+            rgb(23, 24, 42));
+            width: 90%;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+            font-family: Arial, sans-serif;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            -webkit-box-shadow: 0px 0px 40px 9px rgba(0,0,0,0.7);
+            box-shadow: 0px 0px 40px 9px rgba(0,0,0,0.5);
+        }
+        .titulo {
+            text-align: center;
+            padding: .5rem;
+            font-size: 5rem;
+            color: rgb(239,196,27);
+        }
+        .servicios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+            gap: 1rem;
+            padding: .5rem;
+        }
+        .servicio {
+            border: 1px solid rgb(239,196,27);
+            border-radius: 1rem;
+            padding: .3rem;
+            text-align: center;
+            background: linear-gradient(to right,
+            rgba(63,72,204,0),
+            rgba(63,72,204,1));
+            box-shadow: 0 2px 4px rgba(239,196,27,.1);
+            transition: transform 0.3s;
+        }
+        .servicio:hover {
+            transform: scale(1.05);
+        }
+        .servicio-icono {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right,
+            rgba(239,196,27,.2),
+            rgba(239,196,27,.9));
+            border-radius: 50%;
+            color: white;
+            font-size: 40px;
+        }
+        .servicio-nombre {
+            margin-top: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+        .servicio-descripcion {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #666;
+            text-align: justify;
+            display: none;
+        }
+        .servicio-precio {
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #4caf50;
+            text-align: center;
+        }
+        @media screen and (max-width: 768px) {
+            /* Estilos para hacer el diseño responsive en pantallas pequeñas */
+            .servicios {
+                /*
+                flex-direction: column;
+                */
+                grid-template-columns: 1fr;
+            }
+            .servicio {
+                width: 80%;
+                margin: 10px auto;
+            }
+        }
+        @media screen and (max-width: 360px) {
+            /* Estilos para hacer el diseño responsive en pantallas pequeñas */
+            .servicio-nombre{
+                font-size: 20px;
+            }
+            .servicio-descripcion{
+                font-size: 14px;
+            }
+            .servicio-precio{
+                font-size: 16px;
+            }
+        }
+    </style>
+    <title>Document</title>
+    </head>
+    <body>
+        <section class="hero3">
+            <div class="contenedor">
+                <h1 class="titulo">Nuestros servicios</h1>
+                <div class="servicios">
+                    <div class="servicio" onmouseover="mostrar(this)" onmouseout="ocultar(this)">
+                        <div class="servicio-icono">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="servicio-nombre">Organización e implementación SG-SST</div>
+                        <div class="servicio-descripcion">Creamos páginas web atractivas y funcionales para tu negocio o proyecto personal.</div>
+                        <div class="servicio-precio">$500</div>
+                    </div>
+                    <div class="servicio" onmouseover="mostrar(this)" onmouseout="ocultar(this)">
+                        <div class="servicio-icono">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="servicio-nombre">Acompañamiento en ejecucion de actividades</div>
+                        <div class="servicio-descripcion">Te ayudamos a mejorar tu presencia online y a aumentar tus ventas con estrategias de SEO, SEM y redes sociales.</div>
+                        <div class="servicio-precio">$600</div>
+                    </div>
+                    <div class="servicio" onmouseover="mostrar(this)" onmouseout="ocultar(this)">
+                        <div class="servicio-icono">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="servicio-nombre">Analisis de panoramas de risgo</div>
+                        <div class="servicio-descripcion">Te ayudamos a mejorar tu presencia online y a aumentar tus ventas con estrategias de SEO, SEM y redes sociales.</div>
+                        <div class="servicio-precio">$600</div>
+                    </div>
+                    <div class="servicio" onmouseover="mostrar(this)" onmouseout="ocultar(this)">
+                        <div class="servicio-icono">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="servicio-nombre">Auditoria interna y externa</div>
+                        <div class="servicio-descripcion">Desarrollamos aplicaciones móviles nativas o híbridas para Android e iOS.</div>
+                        <div class="servicio-precio">$800</div>
+                    </div>
+                    <div class="servicio" onmouseover="mostrar(this)" onmouseout="ocultar(this)">
+                        <div class="servicio-icono">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="servicio-nombre">Asignacion de personal</div>
+                        <div class="servicio-descripcion">Te ayudamos a mejorar tu presencia online y a aumentar tus ventas con estrategias de SEO, SEM y redes sociales.</div>
+                        <div class="servicio-precio">$600</div>
+                    </div>
+                    <div class="servicio" onmouseover="mostrar(this)" onmouseout="ocultar(this)">
+                        <div class="servicio-icono">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="servicio-nombre">Gestión externa</div>
+                        <div class="servicio-descripcion">Te ayudamos a mejorar tu presencia online y a aumentar tus ventas con estrategias de SEO, SEM y redes sociales.</div>
+                        <div class="servicio-precio">$600</div>
+                    </div>
+                    <div class="servicio" onmouseover="mostrar(this)" onmouseout="ocultar(this)">
+                        <div class="servicio-icono">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="servicio-nombre">Asesorías</div>
+                        <div class="servicio-descripcion">Te ayudamos a mejorar tu presencia online y a aumentar tus ventas con estrategias de SEO, SEM y redes sociales.</div>
+                        <div class="servicio-precio">$600</div>
+                    </div>
+                </div>
+                <!--
+                <form id="form_service">
+                    <label for="element"></label><select name="elemento" id="element">
+                        <option value="elemento1">Elemento 1</option>
+                        <option value="elemento2">Elemento 2</option>
+                        <option value="elemento3">Elemento 3</option>
+                    </select>
+                    <br><br>
+                    <input type="button" value="Saber más" onclick="copiarValor()">
+                </form>
+                -->
+            </div>
+        </section>
+        <!--
+        <script>
+            function copiarValor() {
+                var valor = document.getElementById('campo-comun1').value;
+                localStorage.setItem('campoComun', valor);
+            }
+        </script>
+        -->
+        <script>
+            // Función para mostrar la descripción al pasar el mouse
+            function mostrar(servicio) {
+                servicio.querySelector(".servicio-descripcion").style.display = "block";
+            }
+            // Función para ocultar la descripción al quitar el mouse
+            function ocultar(servicio) {
+                servicio.querySelector(".servicio-descripcion").style.display = "none";
+            }
+        </script>
+    </body>
+</html>

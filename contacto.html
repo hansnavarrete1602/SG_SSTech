@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preload" href="CSS/normalize.css" as="style">
+    <link rel="stylesheet" href="CSS/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link rel="preload" href="CSS/style.css" as="style">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>SG-SSTech - ¡Salud segura, Trabajo seguro!</title>
+</head>
+<body>
+    <section class="hero2">
+        <div class="hero2-inner">
+            <form action="mailto:sony.maturana@gmail.com?subject=Formulario de contacto" method="post" enctype="text/plain" id="form_contact">
+                <!-- Header -->
+                <div class="head">
+                    <h1>Formulario de contacto</h1>
+                    <p>Porfavor llene todos los campos</p>
+                </div>
+                <!-- /Header -->
+
+                <!-- Main Form Started -->
+                <label for="fullName"><span class="req">*</span>Tu nombre completo:</label>
+                <input type="text" placeholder="Nombre completo" name="fullName" id="fullName" required>
+
+                <label for="email"><span class="req">*</span>Correo electronico:</label>
+                <input type="email" placeholder="abcd@xyz.com" name="email" id="email" required>
+
+                <label for="subject"><span class="req">*</span>Asunto:</label>
+                <input type="text" placeholder="Consultoría" name="Type" id="subject" required>
+
+                <label for="message">Mensaje:</label>
+                <textarea placeholder="Escribe tu mensaje aquí" name="message" id="message"></textarea>
+
+                <!-- Submit Button -->
+                <input type="submit" value="Enviar">
+
+            </form>
+        </div>
+        <div class="scroll-down"></div>
+    </section>
+
+
+    <section class="navigation">
+        <a href="home.html"><img src="IMG/logo3.png" alt="logo"></a>
+        <nav>
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <footer class="footer">
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+        <ul class="social-icon">
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                <ion-icon name="logo-facebook"></ion-icon>
+            </a></li>
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                <ion-icon name="logo-whatsapp"></ion-icon>
+            </a></li>
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                <ion-icon name="logo-linkedin"></ion-icon>
+            </a></li>
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                <ion-icon name="logo-instagram"></ion-icon>
+            </a></li>
+        </ul>
+
+        <p>SG-SSTech &copy;2024 Bogota Colombia | All Rights Reserved</p>
+    </footer>
+    <script>
+        window.onload = function() {
+            document.getElementById('subject').value = localStorage.getItem('campoComun');
+        };
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        window.onscroll = function() {
+            let scrollDown = document.querySelector('.scroll-down');
+            if (window.scrollY > 0) {
+                scrollDown.style.display = 'none';
+            } else {
+                scrollDown.style.display = 'block';
+            }
+        };
+    </script>
+
+</body>
+</html>

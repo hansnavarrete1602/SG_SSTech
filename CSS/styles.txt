@@ -1,0 +1,248 @@
+/*
+@import url('https://fonts.cdnfonts.com/css/myriad-pro');
+<link href="https://fonts.cdnfonts.com/css/myriad-pro" rel="preload" as="style">
+<link href="https://fonts.cdnfonts.com/css/myriad-pro" rel="stylesheet">
+*/
+
+:root{
+    --negro: #000;
+    --blanco: #FFF;
+    --primario: rgb(239,196,27);
+    /* #EFC41B - CMYK(0,18,89,6) - HSV(48,89,94) - HSL(48,87,52) */
+    --secundario: rgb(63,72,204);
+    /* #3F48CC - CMYK(69,65,0,20) - HSV(236,69,80) - HSL(236,58,52) */
+    --terciario: #ec1c24;
+    --grad_header: linear-gradient(to right,
+    rgba(63,72,204,0),
+    rgba(63,72,204,1));
+    --grad_text: linear-gradient(to right,
+    rgba(147, 147, 150, 0),
+    rgb(23, 24, 42));
+    --bg: #E6F0F5;
+    --bg2: #726861;
+    --fuente: 'Raleway', sans-serif;
+}
+
+html{
+    font-size: 62.5%; /* 1rem=10px */
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* GLOBALS */
+body{
+    background-image: linear-gradient(to top, #DFE9F3 0%, var(--bg2) 100%); /* hacer degradado de color*/
+    /*background-color: var(--bg2);*/
+    font-size: 1.6rem;
+}
+
+p{
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+}
+
+.contenedor{
+    max-width: 120rem;
+    max-height: fit-content;
+    margin: 0 auto 2rem auto;
+}
+.sombra{
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(99,89,99,0.47);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(99,89,99,0.47);
+    box-shadow: 0px 5px 15px 0px rgba(99,89,99,0.47);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+h1, h2, h3{
+    text-align: center;
+    color: var(--primario);
+    font-family: var(--fuente);
+}
+
+h1{
+    font-size: 4rem;
+}
+h2{
+    font-size: 3.2rem;
+}
+h3{
+    font-size: 2.4rem;
+}
+/*|||||||||||||||||||||||||||||||||||||||||*/
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--grad_header);
+    .header__logo{
+        margin: 1rem;
+        transition: box-shadow 0.3s ease;
+    }
+    .header__name{
+        font-size: 3rem;
+        margin: 1rem;
+        color: var(--primario);
+        transition: color 0.3s ease;
+    }
+}
+.header:hover{
+    .header__logo{
+        width: 110%;
+        box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.2);
+    }
+    .header__name{
+        color: var(--terciario);
+        font-size: 3.1rem;
+    }
+}
+
+/* navegación */
+.navegacion{
+    overflow: hidden;
+    background-color: var(--secundario);
+    border: .3rem solid var(--primario);
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+}
+.navegacion__enlace{
+    font-family: var(--fuente);
+    font-size: 2.5rem;
+    color: var(--primario);
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 1rem 1.2rem;
+    transition: background-color 0.3s ease;
+}
+.navegacion__enlace:last-of-type{
+    margin-right: 0;
+}
+.navegacion__enlace--activo,
+.navegacion__enlace:hover{
+    color: var(--terciario);
+    font-size: 2.7rem;
+}
+
+/*|||||||||||||||||||||||||||||||||||||||||||||||||||*/
+.hero {
+    background-image: url(../IMG/two.jpg);
+    background-repeat: no-repeat; /* que no se repita la imagen */
+    background-size: contain; /* este en el espacio completo*/
+    height: 400px;
+    position: relative; /* el padre siempre debe ser relativo para que el hijo sea absoluto*/
+    margin-bottom: 2rem;
+}
+.contenido-hero {
+    position: absolute;
+    background-color: rgb( 0 0 0 / 70% ); /* Forma moderna */
+    width: 100%; /* remplaza left right*/
+    height: 100%; /* remplaza top bottom */
+    display: flex; /* se usa para posicionar los elementos, es como una habilitación*/
+    flex-direction: column; /* hacia abajo */
+    align-items: center; /* alinea el contenido verticalmente */
+    justify-content: center; /* alinea el contenido horizontalmente */
+}
+.contenido-hero h2,
+.contenido-hero p{
+    color: var(--blanco);
+}
+
+.contenido-hero .ubicacion{
+    /* alineacion vertical */
+    display: flex;
+    align-items: flex-end;
+}
+
+
+.boton{
+    background-color: var(--secundario);
+    color: var(--primario);
+    padding: 1rem 3rem; /* sirve para ampliar el espacio interno del boton */
+    margin-top: 1rem; /* sirve para darle espacio con el elemento de arriba */
+    font-size: 2rem;
+    text-decoration: none; /* le quita la linea de abajo de enlace */
+    text-transform: uppercase; /* pone en mayuscula el texto */
+    font-weight: bold; /* lo pone en estilo negrita */
+    border-radius: .5rem; /* esquinas redondeadas */
+    width: 90%;
+    text-align: center;
+    border: none;
+}
+@media (min-width: 768px) {
+    .boton {
+        width: auto;
+    }
+}
+.boton:hover{
+    color: var(--terciario);
+    cursor: pointer;
+    font-size: 2.2rem;
+}
+
+/* footer */
+.footer{
+    background-color: var(--secundario);
+    padding: 1rem 0;
+    margin-top: 2rem;
+    transition: background-color 0.3s ease;
+}
+.footer__text{
+    font-family: var(--fuente);
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--blanco);
+}
+.footer:hover{
+    background: var(--grad_header);
+}
+
+
+
+
+
+#vid {
+    position: fixed; top: initial; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 1; /* background */
+}
+
+/* (C) CONTENT */
+#content {
+    background:var(--secundario);
+    position: absolute; top: 0; left: 0;
+    width: 100%;
+    text-align: center;
+    color: var(--primario);
+    -webkit-transition: .4s;
+    transition: .4s;
+    padding: 0.5em;
+    z-index: 2;
+}
+nav a {
+    color: inherit;
+    padding: 0 12px;
+    text-decoration: none;
+}
+nav a:hover{
+    background: var(--primario);
+    color: var(--terciario);
+}
